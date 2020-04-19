@@ -9,10 +9,10 @@ export const selectShopCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
     [selectShopCollections],
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 )
 
 export const selectCollection = collectionParamUrl => createSelector(
     [selectShopCollections],
-    collections => collections[collectionParamUrl]
+    collections => collections ? collections[collectionParamUrl] : null
 )

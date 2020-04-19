@@ -10,7 +10,8 @@ import shopReducer from './shop/shop-reducer';
 const config = {
     key: "root",
     storage,
-    whiteList: ['cart']
+    // whiteList: ['cart'],
+    blackList: ['user', 'directory', 'shop',]
 
 }
 const rootReducer = combineReducers({
